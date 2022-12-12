@@ -34,7 +34,7 @@ import (
 )
 
 const (
-	program           = "mongodb-exporter"
+	program           = "mongodb_exporter"
 	versionDataFormat = "20060102-15:04:05"
 )
 
