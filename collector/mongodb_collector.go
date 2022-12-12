@@ -24,10 +24,10 @@ import (
 	"github.com/prometheus/common/log"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	commoncollector "github.com/monotek/mongodb-exporter/collector/common"
-	"github.com/monotek/mongodb-exporter/collector/mongod"
-	"github.com/monotek/mongodb-exporter/collector/mongos"
-	"github.com/monotek/mongodb-exporter/shared"
+	commoncollector "github.com/monotek/mongodb_exporter/collector/common"
+	"github.com/monotek/mongodb_exporter/collector/mongod"
+	"github.com/monotek/mongodb_exporter/collector/mongos"
+	"github.com/monotek/mongodb_exporter/shared"
 )
 
 const namespace = "mongodb"

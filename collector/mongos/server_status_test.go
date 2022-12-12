@@ -24,7 +24,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	"github.com/monotek/mongodb-exporter/testutils"
+	"github.com/monotek/mongodb_exporter/testutils"
 )
 
 func TestParserServerStatus(t *testing.T) {

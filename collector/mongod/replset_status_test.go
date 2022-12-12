@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/monotek/mongodb-exporter/testutils"
+	"github.com/monotek/mongodb_exporter/testutils"
 )
 
 func TestGetReplSetStatusDecodesFine(t *testing.T) {
