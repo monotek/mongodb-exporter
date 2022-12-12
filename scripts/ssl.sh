@@ -2,7 +2,7 @@
 
 set -ex
 
-cd "$PWD/testdata"
+cd "$PWD/testdata" || exit
 
 # CA
 openssl genrsa -out ca.key 2048
@@ -29,5 +29,3 @@ rm client.key
 rm server.crt
 rm server.csr
 rm server.key
-
-cd "$PWD"
