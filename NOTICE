@@ -1,7 +1,12 @@
-Percona MongoDB Exporter.
-Copyright 2017 Percona LLC
+monotek MongoDB Exporter
+Copyright 2022 monotek
 
 The following components are included in this product:
+
+mongodb_exporter
+https://github.com/percona/mongodb_exporter
+Copyright (c) 2017 Percona LLC
+Licensed under the MIT License
 
 mongodb_exporter
 https://github.com/dcu/mongodb_exporter

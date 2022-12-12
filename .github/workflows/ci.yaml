@@ -1,0 +1,50 @@
+name: ci
+
+on: 
+  pull_request:
+
+jobs:
+  super-linter:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Lint Code Base
+        uses: github/super-linter/slim@v4
+        env:
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker-build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Docker metadata action
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images:
+            mongodb-exporter-local
+          tags: |
+            type=raw,latest
+
+      - name: Build Dockerimage
+        id: docker_build
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Dockerfile
+          labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
+          push: false

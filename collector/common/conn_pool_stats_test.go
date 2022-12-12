@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/percona/mongodb_exporter/testutils"
+	"github.com/monotek/mongodb-exporter/testutils"
 )
 
 func TestGetConnPoolStatsDecodesFine(t *testing.T) {

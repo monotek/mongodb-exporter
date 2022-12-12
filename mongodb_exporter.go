@@ -29,12 +29,12 @@ import (
 
 	pmmVersion "github.com/percona/pmm/version"
 
-	"github.com/percona/mongodb_exporter/collector"
-	"github.com/percona/mongodb_exporter/shared"
+	"github.com/monotek/mongodb-exporter/collector"
+	"github.com/monotek/mongodb-exporter/shared"
 )
 
 const (
-	program           = "mongodb_exporter"
+	program           = "mongodb-exporter"
 	versionDataFormat = "20060102-15:04:05"
 )
 
@@ -42,11 +42,11 @@ var (
 	listenAddressF = kingpin.Flag("web.listen-address", "Address to listen on for web interface and telemetry.").Default(":9216").String()
 	metricsPathF   = kingpin.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
 
-	collectDatabaseF             = kingpin.Flag("collect.database", "Enable collection of Database metrics").Bool()
-	collectCollectionF           = kingpin.Flag("collect.collection", "Enable collection of Collection metrics").Bool()
-	collectTopF                  = kingpin.Flag("collect.topmetrics", "Enable collection of table top metrics").Bool()
-	collectIndexUsageF           = kingpin.Flag("collect.indexusage", "Enable collection of per index usage stats").Bool()
-	mongodbCollectConnPoolStatsF = kingpin.Flag("collect.connpoolstats", "Collect MongoDB connpoolstats").Bool()
+	collectDatabaseF               = kingpin.Flag("collect.database", "Enable collection of Database metrics").Bool()
+	collectCollectionF             = kingpin.Flag("collect.collection", "Enable collection of Collection metrics").Bool()
+	collectTopF                    = kingpin.Flag("collect.topmetrics", "Enable collection of table top metrics").Bool()
+	collectIndexUsageF             = kingpin.Flag("collect.indexusage", "Enable collection of per index usage stats").Bool()
+	mongodbCollectConnPoolStatsF   = kingpin.Flag("collect.connpoolstats", "Collect MongoDB connpoolstats").Bool()
 	suppressCollectShardingStatusF = kingpin.Flag("suppress.collectshardingstatus", "Suppress the collection of Sharding Status").Default("false").Bool()
 
 	uriF = kingpin.Flag("mongodb.uri", "MongoDB URI, format").
@@ -77,19 +77,19 @@ func main() {
 	}
 
 	// TODO: Maybe we should move version.Info() and version.BuildContext() to https://github.com/percona/exporter_shared
-	// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/percona/mongodb_exporter/pull/132#discussion_r262227248
+	// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/monotek/mongodb-exporter/pull/132#discussion_r262227248
 	log.Infoln("Starting", program, version.Info())
 	log.Infoln("Build context", version.BuildContext())
 
 	programCollector := version.NewCollector(program)
 	mongodbCollector := collector.NewMongodbCollector(&collector.MongodbCollectorOpts{
-		URI:                      *uriF,
-		CollectDatabaseMetrics:   *collectDatabaseF,
-		CollectCollectionMetrics: *collectCollectionF,
-		CollectTopMetrics:        *collectTopF,
-		CollectIndexUsageStats:   *collectIndexUsageF,
-		CollectConnPoolStats:     *mongodbCollectConnPoolStatsF,
-		SuppressCollectShardingStatus:    *suppressCollectShardingStatusF,
+		URI:                           *uriF,
+		CollectDatabaseMetrics:        *collectDatabaseF,
+		CollectCollectionMetrics:      *collectCollectionF,
+		CollectTopMetrics:             *collectTopF,
+		CollectIndexUsageStats:        *collectIndexUsageF,
+		CollectConnPoolStats:          *mongodbCollectConnPoolStatsF,
+		SuppressCollectShardingStatus: *suppressCollectShardingStatusF,
 	})
 	prometheus.MustRegister(programCollector, mongodbCollector)
 
@@ -102,7 +102,7 @@ func main() {
 // `--version` will be displayed in PMM format. Also `PMM Version` will be connected
 // to application version and will be printed in all logs.
 // TODO: Refactor after moving version.Info() and version.BuildContext() to https://github.com/percona/exporter_shared
-// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/percona/mongodb_exporter/pull/132#discussion_r262227248
+// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/monotek/mongodb-exporter/pull/132#discussion_r262227248
 func initVersionInfo() {
 	version.Version = pmmVersion.Version
 	version.Revision = pmmVersion.FullCommit

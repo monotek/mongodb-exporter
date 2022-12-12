@@ -24,23 +24,23 @@ import (
 	"github.com/prometheus/common/log"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	commoncollector "github.com/percona/mongodb_exporter/collector/common"
-	"github.com/percona/mongodb_exporter/collector/mongod"
-	"github.com/percona/mongodb_exporter/collector/mongos"
-	"github.com/percona/mongodb_exporter/shared"
+	commoncollector "github.com/monotek/mongodb-exporter/collector/common"
+	"github.com/monotek/mongodb-exporter/collector/mongod"
+	"github.com/monotek/mongodb-exporter/collector/mongos"
+	"github.com/monotek/mongodb-exporter/shared"
 )
 
 const namespace = "mongodb"
 
 // MongodbCollectorOpts is the options of the mongodb collector.
 type MongodbCollectorOpts struct {
-	URI                      string
-	CollectDatabaseMetrics   bool
-	CollectCollectionMetrics bool
-	CollectTopMetrics        bool
-	CollectIndexUsageStats   bool
-	CollectConnPoolStats     bool
-	SuppressCollectShardingStatus    bool
+	URI                           string
+	CollectDatabaseMetrics        bool
+	CollectCollectionMetrics      bool
+	CollectTopMetrics             bool
+	CollectIndexUsageStats        bool
+	CollectConnPoolStats          bool
+	SuppressCollectShardingStatus bool
 }
 
 func (in *MongodbCollectorOpts) toSessionOps() *shared.MongoSessionOpts {
@@ -227,7 +227,7 @@ func (exporter *MongodbCollector) collectMongos(client *mongo.Client, ch chan<- 
 		serverStatus.Export(ch)
 	}
 
-	if !exporter.Opts.SuppressCollectShardingStatus  {
+	if !exporter.Opts.SuppressCollectShardingStatus {
 		log.Debug("Collecting Sharding Status")
 		shardingStatus := mongos.GetShardingStatus(client)
 		if shardingStatus != nil {
