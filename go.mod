@@ -9,7 +9,7 @@ require (
 	github.com/percona/pmm v0.0.0-20190616165924-3b769b4ca86e
 	github.com/prometheus/client_golang v1.5.1
 	github.com/prometheus/common v0.9.1
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.8.1
 	go.mongodb.org/mongo-driver v1.11.1
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
