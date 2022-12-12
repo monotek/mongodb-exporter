@@ -1,8 +1,8 @@
 # Classic MongoDB Exporter
 
-This is a fork of version 0.11.2 of the [Percona MongoDB Exporter](https://github.com/monotek/mongodb-exporter), which just got some dependency updates.
+This is a fork of version 0.11.2 of the [Percona MongoDB Exporter](https://github.com/monotek/mongodb_exporter), which just got some dependency updates.
 
-[Percona MongoDB Exporter](https://github.com/monotek/mongodb-exporter) is based on [MongoDB exporter](https://github.com/dcu/mongodb_exporter) by David Cuadrado ([@dcu](https://github.com/dcu)), but forked for full sharded support and structure changes.
+[Percona MongoDB Exporter](https://github.com/monotek/mongodb_exporter) is based on [MongoDB exporter](https://github.com/dcu/mongodb_exporter) by David Cuadrado ([@dcu](https://github.com/dcu)), but forked for full sharded support and structure changes.
 
 ## Features
 
@@ -30,13 +30,13 @@ Metrics `mongodb_mongod_replset_oplog_*` doesn't work in [Master/Slave](https://
 1. Get the code from the Percona repository:
  
     ```bash
-    go get -u github.com/monotek/mongodb-exporter
+    go get -u github.com/monotek/mongodb_exporter
     ```
 
 2. Switch to the buld directory and just run ``make`` to install all needed tools, format code with `go fmt`, build a binary for your OS and run tests.:
  
     ```bash
-    cd ${GOPATH-$HOME/go}/src/github.com/monotek/mongodb-exporter
+    cd ${GOPATH-$HOME/go}/src/github.com/monotek/mongodb_exporter
     make
     ```
 

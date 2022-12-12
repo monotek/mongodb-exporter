@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in our [release notes](https://github.com/monotek/mongodb-exporter/releases)
+All notable changes to this project will be documented in our [release notes](https://github.com/monotek/mongodb_exporter/releases)
 
 ## Old Percona changelog
 
@@ -136,6 +136,7 @@ This is a **BREAKING CHANGE**. The labels of these metrics are now prefixed with
 - Test `--help` flag for diff of options between releases #111
 
 ## [0.6.1] - 2018-06-15
+
 ### Fixed
 
 - `--version` now properly reports `0.6.1`
@@ -213,9 +214,9 @@ with source code locations.
 - Default listen port changed to 9216.
 - All log messages now go to stderr. Logging flags changed.
 - Fewer messages on default INFO logging level.
-- Use https://github.com/prometheus/common log for logging instead of https://github.com/golang/glog.
-- Use https://github.com/prometheus/common version to build with version information.
-- Use https://github.com/prometheus/promu for building.
+- Use <https://github.com/prometheus/common> log for logging instead of <https://github.com/golang/glog>.
+- Use <https://github.com/prometheus/common> version to build with version information.
+- Use <https://github.com/prometheus/promu> for building.
 
 ## [0.1.0] - 2016-04-13
 

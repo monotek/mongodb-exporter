@@ -1,4 +1,4 @@
-module github.com/monotek/mongodb-exporter
+module github.com/monotek/mongodb_exporter
 
 go 1.18
 

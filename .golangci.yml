@@ -7,7 +7,7 @@ linters-settings:
       - errors
 
   goimports:
-    local-prefixes: github.com/monotek/mongodb-exporter
+    local-prefixes: github.com/monotek/mongodb_exporter
 
   lll:
     line-length: 170

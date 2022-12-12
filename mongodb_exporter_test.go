@@ -28,7 +28,7 @@ import (
 	"github.com/prometheus/common/version"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/monotek/mongodb-exporter/shared"
+	"github.com/monotek/mongodb_exporter/shared"
 )
 
 var Update = flag.Bool("update", false, "update .golden files")
@@ -59,7 +59,7 @@ func TestBin(t *testing.T) {
 		}
 	}()
 
-	importpath := "github.com/monotek/mongodb-exporter/vendor/github.com/percona/pmm"
+	importpath := "github.com/monotek/mongodb_exporter/vendor/github.com/percona/pmm"
 	path := binDir + "/" + binName
 	xVariables := map[string]string{
 		importpath + "/version.Version":    "gotest-version",
