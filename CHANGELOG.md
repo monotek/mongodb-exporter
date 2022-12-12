@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to this project will be documented in our [release notes](https://github.com/monotek/mongodb_exporter/releases)
+All notable changes to this project will be documented in our [release notes](https://github.com/monotek/mongodb-exporter/releases)
 
 ## Old Percona changelog
 

@@ -29,8 +29,8 @@ import (
 
 	pmmVersion "github.com/percona/pmm/version"
 
-	"github.com/monotek/mongodb_exporter/collector"
-	"github.com/monotek/mongodb_exporter/shared"
+	"github.com/monotek/mongodb-exporter/collector"
+	"github.com/monotek/mongodb-exporter/shared"
 )
 
 const (
@@ -77,7 +77,7 @@ func main() {
 	}
 
 	// TODO: Maybe we should move version.Info() and version.BuildContext() to https://github.com/percona/exporter_shared
-	// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/monotek/mongodb_exporter/pull/132#discussion_r262227248
+	// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/monotek/mongodb-exporter/pull/132#discussion_r262227248
 	log.Infoln("Starting", program, version.Info())
 	log.Infoln("Build context", version.BuildContext())
 
@@ -102,7 +102,7 @@ func main() {
 // `--version` will be displayed in PMM format. Also `PMM Version` will be connected
 // to application version and will be printed in all logs.
 // TODO: Refactor after moving version.Info() and version.BuildContext() to https://github.com/percona/exporter_shared
-// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/monotek/mongodb_exporter/pull/132#discussion_r262227248
+// See: https://jira.percona.com/browse/PMM-3250 and https://github.com/monotek/mongodb-exporter/pull/132#discussion_r262227248
 func initVersionInfo() {
 	version.Version = pmmVersion.Version
 	version.Revision = pmmVersion.FullCommit
