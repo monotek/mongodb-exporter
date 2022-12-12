@@ -13,13 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [PMM-6361](https://jira.percona.com/browse/PMM-6361): New flag `--suppress.collectshardingstatus` can be used to disable the collection of Sharding Status. This flag is not set by default. 
+- [PMM-6361](https://jira.percona.com/browse/PMM-6361): New flag `--suppress.collectshardingstatus` can be used to disable the collection of Sharding Status. This flag is not set by default.
 On a large scale cluster it could help you to disable the mongoS exporters induced load to config tables. [@vrazvan-adobe](https://github.com/vrazvan-adobe)
 
 ### Fixed
 
 - [PMM-6361](https://jira.percona.com/browse/PMM-6361): `runtime error: invalid memory address or nil pointer dereference`, source="sharding_status.go:166" .
-When chunks collection is very big, the aggregate on it can take longer then default default 1000ms SocketTimeout. [@vrazvan-adobe](https://github.com/vrazvan-adobe)                                        
+When chunks collection is very big, the aggregate on it can take longer then default default 1000ms SocketTimeout. [@vrazvan-adobe](https://github.com/vrazvan-adobe)
 
 ## [0.11.0]
 
@@ -27,7 +27,7 @@ When chunks collection is very big, the aggregate on it can take longer then def
 
 - `go.mongodb.org/mongo-driver` was updated to `v1.3.2`.
 - `github.com/prometheus/client_golang` was updated to `v1.5.1`.
-- [PMM-4719](https://jira.percona.com/browse/PMM-4719): Remove redundant flags from "mongodb_exporter" if possible. 
+- [PMM-4719](https://jira.percona.com/browse/PMM-4719): Remove redundant flags from "mongodb_exporter" if possible.
 Those flags have been removed: `--mongodb.authentification-database, --mongodb.max-connections, --mongodb.socket-timeout, --mongodb.sync-timeout`. You can use [connection-string-options](https://docs.mongodb.com/manual/reference/connection-string/#connection-string-options) instead.
 - Added lost connection metrics and removed useless file [@nikita-b](https://github.com/nikita-b)
 
@@ -35,8 +35,8 @@ Those flags have been removed: `--mongodb.authentification-database, --mongodb.m
 
 ### Fixed
 
-- [PMM-2717](https://jira.percona.com/browse/PMM-2717): Failed to execute find query on 'config.locks': not found. source="sharding_status.go:106". 
-All `mongodb_mongos_sharding_balancer_lock_*` metrics won't be exposed for `MongoDB 3.6+`. See: https://docs.mongodb.com/v3.6/reference/config-database/#config.locks.
+- [PMM-2717](https://jira.percona.com/browse/PMM-2717): Failed to execute find query on 'config.locks': not found. source="sharding_status.go:106".
+All `mongodb_mongos_sharding_balancer_lock_*` metrics won't be exposed for `MongoDB 3.6+`. See: <https://docs.mongodb.com/v3.6/reference/config-database/#config.locks>.
 
 ## [0.10.0]
 
@@ -129,6 +129,7 @@ This is a **BREAKING CHANGE**. The labels of these metrics are now prefixed with
 - Move CHANGELOG.md to "Keep a Changelog" format.
 
 ## [0.6.2] - 2018-09-11
+
 ### Added
 
 - Build binaries #110
