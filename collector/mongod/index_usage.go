@@ -8,8 +8,8 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	"github.com/percona/mongodb_exporter/collector/common"
-	"github.com/percona/mongodb_exporter/shared"
+	"github.com/monotek/mongodb-exporter/collector/common"
+	"github.com/monotek/mongodb-exporter/shared"
 )
 
 var indexUsage = prometheus.NewCounterVec(prometheus.CounterOpts{

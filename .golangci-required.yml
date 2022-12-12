@@ -10,7 +10,7 @@ linters-settings:
       - errors
 
   goimports:
-    local-prefixes: github.com/percona/mongodb_exporter
+    local-prefixes: github.com/monotek/mongodb-exporter
 
 linters:
   disable-all: true
