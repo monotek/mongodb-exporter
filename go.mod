@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/Masterminds/semver v1.5.0
 	github.com/andreyvit/diff v0.0.0-20170406064948-c7f18ee00883
-	github.com/percona/exporter_shared v0.7.3
+	github.com/percona/exporter_shared v0.7.4
 	github.com/percona/pmm v2.18.0+incompatible
 	github.com/prometheus/client_golang v1.14.0
 	github.com/prometheus/common v0.38.0
