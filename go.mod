@@ -10,7 +10,7 @@ require (
 	github.com/prometheus/client_golang v1.14.0
 	github.com/prometheus/common v0.38.0
 	github.com/stretchr/testify v1.8.1
-	go.mongodb.org/mongo-driver v1.11.1
+	go.mongodb.org/mongo-driver v1.11.3
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
 
